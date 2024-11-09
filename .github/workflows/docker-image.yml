@@ -17,8 +17,7 @@ jobs:
     - name: List files in the root directory
       run: ls -la
     - name: Change to project directory
-      run: cd nextjs-fastapi-framework-main
-    - name: List files in the project directory
-      run: ls -la nextjs-fastapi-framework-main
+      run: cd nextjs-fastapi-framework-main && ls -la
     - name: Build the Docker image
-      run: docker build nextjs-fastapi-framework-main --file nextjs-fastapi-framework-main/Dockerfile --tag my-image-name:$(date +%s)
+      working-directory: nextjs-fastapi-framework-main
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
