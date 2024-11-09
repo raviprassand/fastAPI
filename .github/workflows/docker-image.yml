@@ -17,4 +17,4 @@ jobs:
     - name: List files in the directory
       run: ls -la
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      run: docker build . --file docker-image.yml --tag my-image-name:$(date +%s)
